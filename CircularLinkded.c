@@ -1,13 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-// Node structure
+
 struct Node {
     int data;
     struct Node* next;
 };
-
-// Insert at end
+
 void insertAtEnd(struct Node** head_ref, int data) {
     struct Node* newNode = (struct Node*) malloc(sizeof(struct Node));
     struct Node* temp = *head_ref;
@@ -25,8 +23,7 @@ void insertAtEnd(struct Node** head_ref, int data) {
 
     temp->next = newNode;
 }
-
-// Delete node by key
+
 void deleteNode(struct Node** head_ref, int key) {
     if (*head_ref == NULL)
         return;
@@ -60,8 +57,7 @@ void deleteNode(struct Node** head_ref, int key) {
         free(curr);
     }
 }
-
-// Traverse (Circular)
+
 void traverse(struct Node* head) {
     struct Node* temp = head;
     if (head != NULL) {
@@ -72,8 +68,7 @@ void traverse(struct Node* head) {
         printf("(head)\n");
     }
 }
-
-// Main
+
 int main() {
     struct Node* head = NULL;
 
